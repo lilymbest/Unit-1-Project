@@ -73,10 +73,15 @@ body {
 .button {
     border-radius: 12px;
     border: solid 3px white;
-    background-image: url("imgs/space.jpg");
+    background-color: darkblue;
     font-size: 22px;
     text-transform: uppercase;
     color: white;
+}
+.button:hover {
+    background-color: white;
+    color: black;
+    border: solid 3px black;
 }
 
 .cardBoard {
