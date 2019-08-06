@@ -18,11 +18,11 @@ header {
     text-align: center; 
     height: 100%;
     width: 180px;
-    background-color:lightblue;
+    background-color:#90BEDE;
     color: black;
     border-radius: 25px;
     font-size: 20px;
-    border: solid 3px white;
+    border: solid 8px #A1FCDF;
     display: grid;
     grid-column-start: 1;
     grid-row-start: 2; 
@@ -37,11 +37,11 @@ header {
     grid-row-start: 2;
     height: 85%;
     width: 180px;
-    background-color: lightblue;
+    background-color: #90BEDE;
     color: black;
     border-radius: 25px;
     font-size: 22px;
-    border: solid 3px white;
+    border: solid 6px #A1FCDF;
     top: 50px;
     right:10px;
     justify-self: center;
@@ -55,8 +55,8 @@ body {
     grid-column-gap: 10px;
     grid-row-gap: 8px;
     font-family: "Montserrat";
-    background-color: darkblue;
-    background-image: url("imgs/space2.jpg");
+    background-color: #90BEDE;
+    background-image: url("imgs/space.jpeg");
 }
 
 .replayBtn {
@@ -72,16 +72,16 @@ body {
 
 .button {
     border-radius: 12px;
-    border: solid 3px white;
-    background-color: darkblue;
+    border: solid 6px #A1FCDF;
+    background-color: #90BEDE;
     font-size: 22px;
     text-transform: uppercase;
     color: white;
 }
 .button:hover {
-    background-color: white;
+    background-color: #A1FCDF;
     color: black;
-    border: solid 3px black;
+    border: solid 6px #90BEDE;
 }
 
 .cardBoard {
@@ -97,13 +97,18 @@ body {
     width: 100%;
     grid-column-gap: 10px;
     justify-self: center;
-    border: solid 4px white;
+    border: solid 4px #A1FCDF;
     border-radius: 25px;
     justify-content: center;
     text-align: center;
     justify-self: center;
     justify-items: center;
+    background-color: #A1FCDF;
 
+}
+
+.cardBoard:hover {
+    background-color: #A1FCDF;
 }
 
 .empty {
@@ -117,20 +122,34 @@ footer {
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 3;
-    background-color: lightblue;
+    background-color: #90BEDE;
     border: solid 2px white;
     justify-self: center;
     border-radius: 25px;
     height: 50%;
     width: 50%;
     text-align: center;
-    align-self: center;
+    align-self: center; 
 }
+a {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    text-align: center;
+    align-self: center;
+    height: 70%;
+    width: 50%;
+    justify-self: center;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
 #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10, #c11, #c12, #c13, #c14, #c15, #c16, #c17, #c18, #c19, #c20 {
-    background: lightblue;
+    background: #90BEDE;
     width: 93%;
     height: 93%;
-    border: solid 6px white;
+    border: solid 6px black;
 }
 
 p {
@@ -175,10 +194,21 @@ p {
     margin: 1px;
 }
 .highScores{
-    display: none;
+    display: grid;
+    grid-row-start: 5;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    height: 36.5%;
+    width: 100%;
+    justify-self: center;
+    align-self: end;
+    border-radius: 10px;
 }
 .replayBtn {
-    display: none;
+    display: grid;
+    grid-row-start: 5;
+    grid-column-start: 2;
+    height: 40%;
 }
 .cardBoard {
     width: 100%;
