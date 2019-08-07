@@ -2,6 +2,7 @@
 // const board, score;
 // const highScores = [];
 // card array
+let score = 0;
 const cards = [
     {
         planet: "moon",
@@ -34,12 +35,12 @@ const cards = [
         cardImage: "css/images/venus-yellow.png"
     },
     {
-        plant: "earth",
+        planet: "earth",
         backgroundColor: "purple",
         cardImage: "css/images/earth-purple.png"
     },
     {
-        plant: "earth",
+        planet: "earth",
         backgroundColor: "grey",
         cardImage: "css/images/earth-grey.png"
     },
@@ -126,11 +127,6 @@ document.querySelector('button').addEventListener('click', function (){
 
 
 /*----- functions -----*/ 
-init();
-
-function init(){
-   
-}
 
 //shuffles the cards randomly 
 function shuffleCards(ary){
@@ -146,14 +142,31 @@ function shuffleCards(ary){
     return ary;
 };
 
-function checkMatch(){
+let cardFlipped = false;
+let guess = [];
 
+// function checkMatch(arry, evt){
+//     if(arry.length === 2){
+//     let [num1, num2] = arry;
+//     console.log(num1, num2, arry);
+//         if(cards[num1].planet === cards[num2].planet){
+//             score += 10;
+//             console.log('match');
+//         }
+//     } else {
+//     flipBack(evt);
+//     }
+// }
+function flipBack(evt){
+    evt.target.setAttribute('src', "css/images/back.png");
+    
 }
 //flip the card from the carback image to main image
-function flip(){
-    var cardId = this.getAttribute('data-id');
+function flip(evt){ 
+    let cardId = this.getAttribute('data-id');
+    guess.push(this.getAttribute('data-id'));
     this.setAttribute('src', cards[cardId].cardImage);
-    checkMatch();
+    checkMatch(guess, evt);
 }
 //start timer
 function startTimer(duration, display){
@@ -180,16 +193,16 @@ function startTimer(duration, display){
 setTimeout(() => {
     clearInterval(timer);//clearing the interval so that the alert doesnt loop forever
     alert("Time's Up! Final Score:")
-   }, 31100);//alert doesn't cut off before the timer visibly hits zero
+   }, 31100);//alerandomIdxrt doesn't cut off before the timer visibly hits zero
 };
 
 //render the gameboard images
 function render(){
-    for (i = 0; i < 20; i++) {
+    for (i = 0; i < cards.length; i++) {
         var cardEl = document.createElement('img');
         cardEl.setAttribute('src', "css/images/back.png")
         cardEl.setAttribute('data-id', i);
-        cardEl.addEventListener('click', flip, checkMatch);//flips card on click
+        cardEl.addEventListener('click', flip);//flips card on click
         document.getElementById('cardBoard').appendChild(cardEl);
     }
 };
