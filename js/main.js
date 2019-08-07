@@ -145,27 +145,40 @@ function shuffleCards(ary){
 let cardFlipped = false;
 let guess = [];
 
-// function checkMatch(arry, evt){
-//     if(arry.length === 2){
-//     let [num1, num2] = arry;
-//     console.log(num1, num2, arry);
-//         if(cards[num1].planet === cards[num2].planet){
-//             score += 10;
-//             console.log('match');
-//         }
-//     } else {
-//     flipBack(evt);
-//     }
-// }
-function flipBack(evt){
-    evt.target.setAttribute('src', "css/images/back.png");
+function checkMatch(arry, evt){
+    if(arry.length === 2){
+    let [num1, num2] = arry;
+    console.log(num1, num2, arry);
+        if(cards[num1].planet === cards[num2].planet){
+            score += 10;
+            guess  = [];
+            console.log('match');
+        } else {
+            console.log('hit')
+            guess = [];
+            setTimeout(() => {
+                flipBack(num1, num2, evt);
+               }, 600);
+            
+            
+        }
+    } 
+    //else {
+    // flipBack(evt);
+    // }
+}
+function flipBack(num1, num2, evt){
+    
+    document.getElementById(`c${num1}`).setAttribute('src', "css/images/back.png");
+    document.getElementById(`c${num2}`).setAttribute('src', "css/images/back.png");
+    // evt.target.setAttribute('src', "css/images/back.png");
     
 }
 //flip the card from the carback image to main image
 function flip(evt){ 
-    let cardId = this.getAttribute('data-id');
-    guess.push(this.getAttribute('data-id'));
-    this.setAttribute('src', cards[cardId].cardImage);
+    let cardId = evt.target.getAttribute('data-id');
+    guess.push(evt.target.getAttribute('data-id'));
+    evt.target.setAttribute('src', cards[cardId].cardImage);
     checkMatch(guess, evt);
 }
 //start timer
@@ -202,6 +215,7 @@ function render(){
         var cardEl = document.createElement('img');
         cardEl.setAttribute('src', "css/images/back.png")
         cardEl.setAttribute('data-id', i);
+        cardEl.setAttribute('id', 'c'+i)
         cardEl.addEventListener('click', flip);//flips card on click
         document.getElementById('cardBoard').appendChild(cardEl);
     }
