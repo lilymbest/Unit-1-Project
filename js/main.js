@@ -163,9 +163,6 @@ function checkMatch(arry, evt){
             
         }
     } 
-    //else {
-    // flipBack(evt);
-    // }
 }
 function flipBack(num1, num2, evt){
     
