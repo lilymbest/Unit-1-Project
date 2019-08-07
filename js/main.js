@@ -1,109 +1,109 @@
 /*----- constants -----*/ 
-const board, score;
-const highScores = [];
+// const board, score;
+// const highScores = [];
 // card array
 const cards = [
     {
         planet: "moon",
         backgroundColor: "blue",
-        cardImage: ""
+        cardImage: "css/images/moon-blue.png"
     },
     {
         planet: "moon",
         backgroundColor: "red",
-        cardImage: ""
+        cardImage: "css/images/moon-red.png"
     },
     {
         planet: "mercury",
         backgroundColor: "green",
-        cardImage: ""
+        cardImage: "css/images/mercury-green.png"
     },
     {
         planet: "mercury",
         backgroundColor: "blue",
-        cardImage: ""
+        cardImage: "css/images/mercury-blue.png"
     },
     {
         planet: "venus",
         backgroundColor: "pink",
-        cardImage: ""
+        cardImage: "css/images/venus-pink.png"
     },
     {
         planet: "venus",
         backgroundColor: "yellow",
-        cardImage: ""
+        cardImage: "css/images/venus-yellow.png"
     },
     {
         plant: "earth",
         backgroundColor: "purple",
-        cardImage: ""
+        cardImage: "css/images/earth-purple.png"
     },
     {
         plant: "earth",
         backgroundColor: "grey",
-        cardImage: ""
+        cardImage: "css/images/earth-grey.png"
     },
     {
         planet: "mars",
         backgroundColor: "grey",
-        cardImage: ""
+        cardImage: "css/images/mars-grey.png"
     },
     {
         planet: "mars",
         backgroundColor: "orange",
-        cardImage: ""
+        cardImage: "css/images/mars-orange.png"
     },
     {
         planet: "jupiter",
         backgroundColor: "green",
-        cardImage: ""
+        cardImage: "css/images/jupiter-green.png"
     },
     {
         planet: "jupiter",
         backgroundColor: "yellow",
-        cardImage: ""
+        cardImage: "css/images/jupiter-yellow.png"
     },
     {
         planet: "saturn",
         backgroundColor: "white",
-        cardImage: ""
+        cardImage: "css/images/saturn-white.png"
     },
     {
         planet: "saturn",
         backgroundColor: "purple",
-        cardImage: ""
+        cardImage: "css/images/saturn-purple.png"
     },
     {
         planet: "uranus",
         backgroundColor: "pink",
-        cardImage: ""
+        cardImage: "css/images/uranus-pink.png"
     },
     {
         planet: "uranus",
         backgroundColor: "red",
-        cardImage: ""
+        cardImage: "css/images/uranus-red.png"
     },
     {
         planet: "neptune",
         backgroundColor: "orange",
-        cardImage: ""
+        cardImage: "css/images/neptune-orange.png"
     },
     {
         planet: "neptune",
         backgroundColor: "black",
-        cardImage: ""
+        cardImage: "css/images/neptune-black.png"
     },
     {
         planet: "pluto",
         backgroundColor: "white",
-        cardImage: ""
+        cardImage: "css/images/pluto-white.png"
     },
     {
         planet: "pluto",
         backgroundColor: "black",
-        cardImage: ""
+        cardImage: "css/images/pluto-black.png"
     }
-]
+];
 /*----- app's state (variables) -----*/
 
 /*----- cached element references -----*/ 
@@ -115,10 +115,14 @@ document.querySelector('button').addEventListener('click', function (){
     display = document.querySelector('.timer');
     startTimer(thirtySec, display);
         if (timer === "0"){
+        render();
         clearInterval(si);
         shuffleCards();
         }
+        
 });
+
+//push player score to the highscore array and add it to an unordered list in the highScores side bar
 
 
 /*----- functions -----*/ 
@@ -132,6 +136,7 @@ function init(){
 function shuffleCards(ary){
     var idx = ary.length, tempVal, randomIdx;
     while (idx !== 0){
+        //randomizing the idx of each card
         randomIdx = Math.floor(Math.random() * idx);
         idx -= 1;
         tempVal = ary[idx];
@@ -144,7 +149,7 @@ function shuffleCards(ary){
 function checkMatch(){
 
 }
-
+//flip the card from the carback image to main image
 function flip(){
     var cardId = this.getAttribute('data-id');
     this.setAttribute('src', cards[cardId].cardImage);
@@ -158,8 +163,7 @@ function startTimer(duration, display){
     si = setInterval(function (){
         minutes = parseInt(timer / 60, 10)
         seconds = parseInt(timer % 60, 10);
-        //if is m
-        minutes = minutes < 10 ? "0" + minutes : minutes;
+
         seconds = seconds < 10 ? "0" + seconds : seconds;
         //display current time in header
         display.textContent = minutes + ":" + seconds;
@@ -175,17 +179,18 @@ function startTimer(duration, display){
 }, 1000)//multiplied by 1000 because set interval is in miliseconds  
 setTimeout(() => {
     clearInterval(timer);//clearing the interval so that the alert doesnt loop forever
-    alert("Time's Up!")
-   }, 31100);
+    alert("Time's Up! Final Score:")
+   }, 31100);//alert doesn't cut off before the timer visibly hits zero
 };
 
-//render the game
+//render the gameboard images
 function render(){
-    for (i = 0; i < cards.length; i++) {
+    for (i = 0; i < 20; i++) {
         var cardEl = document.createElement('img');
         cardEl.setAttribute('src', "css/images/back.png")
         cardEl.setAttribute('data-id', i);
-        cardEl.addEventListener('click', flip);//flips card
-        
+        cardEl.addEventListener('click', flip, checkMatch);//flips card on click
+        document.getElementById('cardBoard').appendChild(cardEl);
     }
-}
+};
+render();

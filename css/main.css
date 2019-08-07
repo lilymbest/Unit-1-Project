@@ -22,7 +22,7 @@ header {
     color: black;
     border-radius: 25px;
     font-size: 20px;
-    border: solid 8px #A1FCDF;
+    border: solid 3px #A1FCDF;
     display: grid;
     grid-column-start: 1;
     grid-row-start: 2; 
@@ -41,7 +41,7 @@ header {
     color: black;
     border-radius: 25px;
     font-size: 22px;
-    border: solid 6px #A1FCDF;
+    border: solid 3px #A1FCDF;
     top: 50px;
     right:10px;
     justify-self: center;
@@ -56,7 +56,7 @@ body {
     grid-row-gap: 8px;
     font-family: "Montserrat";
     background-color: #90BEDE;
-    background-image: url("imgs/space.jpeg");
+    background-image: url("images/space.jpeg");
 }
 
 .replayBtn {
@@ -72,7 +72,7 @@ body {
 
 .button {
     border-radius: 12px;
-    border: solid 6px #A1FCDF;
+    border: solid 3px #A1FCDF;
     background-color: #90BEDE;
     font-size: 22px;
     text-transform: uppercase;
@@ -84,9 +84,9 @@ body {
     border: solid 6px #90BEDE;
 }
 
-.cardBoard {
+#cardBoard {
     display: grid;
-    grid-template-rows: 3px 23% 23% 23% 23%;
+    grid-template-rows: 23% 23% 23% 23%;
     grid-template-columns: 17% 17% 17% 17% 17%;
     grid-row-gap: 8px;
     grid-column-gap: 4px;
@@ -107,7 +107,7 @@ body {
 
 }
 
-.cardBoard:hover {
+#cardBoard:hover {
     background-color: #A1FCDF;
 }
 
@@ -157,7 +157,10 @@ p {
     margin-right: 0.5vmin;
 }
 
-
+img {
+    height: 90%;
+    margin-top: 20px;
+}
 
 
 
@@ -177,6 +180,7 @@ body {
     width: 570px;
     height: 100px;
     justify-self: center;
+    border: solid 4px #A1FCDF;
 }
 h3 {
     font-size: 14px;
@@ -198,19 +202,20 @@ p {
     grid-row-start: 5;
     grid-column-start: 3;
     grid-column-end: 5;
-    height: 36.5%;
+    height: 34%;
     width: 100%;
     justify-self: center;
     align-self: end;
     border-radius: 10px;
+    border: solid 4px #A1FCDF;
 }
 .replayBtn {
     display: grid;
     grid-row-start: 5;
     grid-column-start: 2;
-    height: 40%;
+    height: 38.5%;
 }
-.cardBoard {
+#cardBoard {
     width: 100%;
     display: grid;
     grid-column-start: 2;
@@ -218,16 +223,19 @@ p {
     grid-row-start: 2;
     grid-row-end: 5;
     justify-self: center;
-    border: solid 4px white;
+    border: solid 4px #A1FCDF;
 }
 footer {
+    display: none;
+}
+a {
     display: none;
 }
 }
 
 @media only screen and (max-width: 375px){
 
-.cardBoard {
+#cardBoard {
     width: 100%;
     display: grid;
     grid-column-start: 1;
@@ -269,4 +277,5 @@ header {
     width: 149px;
     height: 30px;
 
+}
 }
