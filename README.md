@@ -7,7 +7,7 @@ Cards - Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
 
 ## **Deployed Link**
 
-https://lilymbest.github.io/Unit-1-Project/
+https://lilymbest.github.io/Unit-1-P8roject/
 
 ---
 ## **Psuedocode**
