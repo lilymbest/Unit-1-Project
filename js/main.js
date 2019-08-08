@@ -126,7 +126,6 @@ document.querySelector('button').addEventListener('click', function (){
 
 
 /*----- functions -----*/ 
-
 //shuffles the cards randomly 
 function shuffleCards(ary){
     var idx = ary.length, tempVal, randomIdx;
@@ -213,3 +212,4 @@ function render(){
     }
 };
 render();
+
