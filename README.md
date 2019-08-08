@@ -38,10 +38,9 @@ Make the start button referesh the game
 
 ## **User Stories**
 ---
-Kyle is 7 years old and wants to learn about all of the planets in out solar system. He would like to be able to play the game multiple times to practice. 
+* AAU I want the cards to flip back when the match is incorrect
 
----
-Vicktoria 27 has 5 kids wants them to all be astronaughts loves huston so so so much.
+* AAU I want a button that restarts the game
 
 ---
 ## Technology Used
