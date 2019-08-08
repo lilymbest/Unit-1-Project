@@ -1,7 +1,5 @@
 /*----- constants -----*/ 
-// const board, score;
-// const highScores = [];
-// card array
+let scoreBoard = [];
 let score = 0;
 const cards = [
     {
@@ -75,12 +73,12 @@ const cards = [
         cardImage: "css/images/saturn-purple.png"
     },
     {
-        planet: "uranus",
+        planet: "uranus", //hehe
         backgroundColor: "pink",
         cardImage: "css/images/uranus-pink.png"
     },
     {
-        planet: "uranus",
+        planet: "uranus", //hehe
         backgroundColor: "red",
         cardImage: "css/images/uranus-red.png"
     },
@@ -112,13 +110,14 @@ const cards = [
 /*----- event listeners -----*/ 
 //click button to start timer and shuffle the cards
 document.querySelector('button').addEventListener('click', function (){
-    var thirtySec = 30,
+    var sixtySec = 60,
     display = document.querySelector('.timer');
-    startTimer(thirtySec, display);
+    startTimer(sixtySec, display);
         if (timer === "0"){
         render();
         clearInterval(si);
         shuffleCards();
+        flipBack(num1, num2, evt);
         }
         
 });
@@ -142,19 +141,16 @@ function shuffleCards(ary){
     return ary;
 };
 
-let cardFlipped = false;
 let guess = [];
 
 function checkMatch(arry, evt){
     if(arry.length === 2){
     let [num1, num2] = arry;
-    console.log(num1, num2, arry);
         if(cards[num1].planet === cards[num2].planet){
+            console.log(cards[num2]);
             score += 10;
             guess  = [];
-            console.log('match');
         } else {
-            console.log('hit')
             guess = [];
             setTimeout(() => {
                 flipBack(num1, num2, evt);
@@ -168,7 +164,6 @@ function flipBack(num1, num2, evt){
     
     document.getElementById(`c${num1}`).setAttribute('src', "css/images/back.png");
     document.getElementById(`c${num2}`).setAttribute('src', "css/images/back.png");
-    // evt.target.setAttribute('src', "css/images/back.png");
     
 }
 //flip the card from the carback image to main image
@@ -202,8 +197,8 @@ function startTimer(duration, display){
 }, 1000)//multiplied by 1000 because set interval is in miliseconds  
 setTimeout(() => {
     clearInterval(timer);//clearing the interval so that the alert doesnt loop forever
-    alert("Time's Up! Final Score:")
-   }, 31100);//alerandomIdxrt doesn't cut off before the timer visibly hits zero
+    alert(`Time's Up! Final Score: ${score}`)
+   }, 61100);//alerandomIdxrt doesn't cut off before the timer visibly hits zero
 };
 
 //render the gameboard images

@@ -55,8 +55,8 @@ body {
     grid-column-gap: 10px;
     grid-row-gap: 8px;
     font-family: "Montserrat";
-    background-color: #90BEDE;
-    background-image: url("images/space.jpeg");
+    background-color: darkblue;
+    background-image: url("images/stardust.png");
 }
 
 .replayBtn {
