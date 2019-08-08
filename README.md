@@ -26,18 +26,18 @@ https://lilymbest.github.io/Unit-1-Project/
 ---
 ## **Stretch Goals**
 
-Add players score on the side score board after each game
+* Add players score on the side score board after each game
 
-Make the cards animate as the flip
+* Make the cards animate as the flip
 
-Make the timer flash when it hits zero
+* Make the timer flash when it hits zero
 
-Make the start button referesh the game
+* Make the start button referesh the game
 
 ---
 
 ## **User Stories**
----
+
 * AAU I want the cards to flip back when the match is incorrect
 
 * AAU I want a button that restarts the game

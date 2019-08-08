@@ -103,10 +103,6 @@ const cards = [
         cardImage: "css/images/pluto-black.png"
     }
 ];
-/*----- app's state (variables) -----*/
-
-/*----- cached element references -----*/ 
-
 /*----- event listeners -----*/ 
 //click button to start timer and shuffle the cards
 document.querySelector('button').addEventListener('click', function (){
@@ -151,10 +147,8 @@ function checkMatch(arry, evt){
         } else {
             guess = [];
             setTimeout(() => {
-                flipBack(num1, num2, evt);
-               }, 600);
-            
-            
+            flipBack(num1, num2, evt);
+            }, 600);
         }
     } 
 }
@@ -193,11 +187,12 @@ function startTimer(duration, display){
         };
     
 }, 1000)//multiplied by 1000 because set interval is in miliseconds  
-setTimeout(() => {
-    clearInterval(timer);//clearing the interval so that the alert doesnt loop forever
-    alert(`Time's Up! Final Score: ${score}!`)
-    scoreBoard.push(score);
-   }, 61100);//alerandomIdxrt doesn't cut off before the timer visibly hits zero
+
+    setTimeout(() => {
+        clearInterval(timer);//clearing the interval so that the alert doesnt loop forever
+        alert(`Time's Up! Final Score: ${score}!`)
+        scoreBoard.push(score);
+    }, 61100);//alert doesn't cut off before the timer visibly hits zero
 };
 
 //render the gameboard images
