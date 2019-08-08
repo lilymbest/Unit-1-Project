@@ -196,7 +196,7 @@ function startTimer(duration, display){
 }, 1000)//multiplied by 1000 because set interval is in miliseconds  
 setTimeout(() => {
     clearInterval(timer);//clearing the interval so that the alert doesnt loop forever
-    alert(`Time's Up! Final Score: ${score}`)
+    alert(`Time's Up! Final Score: ${score}!`)
    }, 61100);//alerandomIdxrt doesn't cut off before the timer visibly hits zero
 };
 
