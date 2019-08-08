@@ -13,14 +13,15 @@ https://lilymbest.github.io/Unit-1-Project/
 ## **Psuedocode**
 ---
 
-Create a 4 x 5 game board with 20 cards total that on the page load shows the backs of the all the cards
+* Create a 4 x 5 game board with 20 cards total that on the page load shows the backs of the all the cards
 
-Add a timer that counts down as the player is matching cards that pauses the page after the time is up
+* Add a timer that counts down as the player is matching cards that pauses the page after the time is up
 
-Create a match function based on the planet id of the card
+* Create a match function based on the planet id of the card
 
-Randomly shuffle the cards each time the game starts
+* Randomly shuffle the cards each time the game starts
 
+* When two cards don't match they flip back to the card back image
 
 ---
 ## **Stretch Goals**
@@ -37,8 +38,15 @@ Make the start button referesh the game
 
 ## **User Stories**
 ---
-User wants the cards to flip back over when the two cards aren't a match
-
-User would like to be able to replay the game and have the cards be in a different place each time
+Kyle is 7 years old and wants to learn about all of the planets in out solar system. He would like to be able to play the game multiple times to practice. 
 
 ---
+Vicktoria 27 has 5 kids wants them to all be astronaughts loves huston so so so much.
+
+---
+## Technology Used
+
+* HTML
+* CSS
+* JavaScript
+

@@ -141,7 +141,6 @@ function shuffleCards(ary){
 };
 
 let guess = [];
-
 function checkMatch(arry, evt){
     if(arry.length === 2){
     let [num1, num2] = arry;
@@ -197,6 +196,7 @@ function startTimer(duration, display){
 setTimeout(() => {
     clearInterval(timer);//clearing the interval so that the alert doesnt loop forever
     alert(`Time's Up! Final Score: ${score}!`)
+    scoreBoard.push(score);
    }, 61100);//alerandomIdxrt doesn't cut off before the timer visibly hits zero
 };
 
