@@ -77,7 +77,17 @@ body {
     align-self: end;
     justify-self: center;
     width: 185px;
-    height: 20px;
+    height: 10px;
+    color: white;
+    margin-bottom: 17px;
+}
+
+.btn {
+    border-radius: 12px;
+    border: solid 3px #A1FCDF;
+    background-color: #90BEDE;
+    font-size: 22px;
+    text-transform: uppercase;
     color: white;
 }
 .button {
@@ -88,6 +98,7 @@ body {
     text-transform: uppercase;
     color: white;
 }
+
 .button:hover {
     background-color: #A1FCDF;
     color: black;
