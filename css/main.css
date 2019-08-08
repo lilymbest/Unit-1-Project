@@ -160,8 +160,6 @@ img {
 
 img.flip {
     transform: rotateY(180deg);
-    transform: scale(0.50);
-    transition: transform .2s;
 }
 
 img:active {

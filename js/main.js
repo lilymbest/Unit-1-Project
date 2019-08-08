@@ -110,9 +110,9 @@ const cards = [
 /*----- event listeners -----*/ 
 //click button to start timer and shuffle the cards
 document.querySelector('button').addEventListener('click', function (){
-    var sixtySec = 60,
+    var thirtySec = 30,
     display = document.querySelector('.timer');
-    startTimer(sixtySec, display);
+    startTimer(thirtySec, display);
         if (timer === "0"){
         render();
         clearInterval(si);
@@ -198,7 +198,7 @@ function startTimer(duration, display){
 setTimeout(() => {
     clearInterval(timer);//clearing the interval so that the alert doesnt loop forever
     alert(`Time's Up! Final Score: ${score}`)
-   }, 61100);//alerandomIdxrt doesn't cut off before the timer visibly hits zero
+   }, 31100);//alerandomIdxrt doesn't cut off before the timer visibly hits zero
 };
 
 //render the gameboard images
